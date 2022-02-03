@@ -5,10 +5,9 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1"
          metadata-complete="true">
-
     <servlet>
         <servlet-name>DeleteMusicServlet</servlet-name>
-        <servlet-class>servlet.DeleteMusicServlet</servlet-class>
+        <servlet-class>servlet.music.DeleteMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteMusicServlet</servlet-name>
@@ -16,9 +15,10 @@
     </servlet-mapping>
 
 
+
     <servlet>
         <servlet-name>DeleteSelMusicServlet</servlet-name>
-        <servlet-class>servlet.DeleteSelMusicServlet</servlet-class>
+        <servlet-class>servlet.music.DeleteSelMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteSelMusicServlet</servlet-name>
@@ -27,7 +27,7 @@
 
     <servlet>
         <servlet-name>FindLoveMusicServlet</servlet-name>
-        <servlet-class>servlet.FindLoveMusicServlet</servlet-class>
+        <servlet-class>servlet.music.FindLoveMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FindLoveMusicServlet</servlet-name>
@@ -36,7 +36,7 @@
 
     <servlet>
         <servlet-name>FindMusicServlet</servlet-name>
-        <servlet-class>servlet.FindMusicServlet</servlet-class>
+        <servlet-class>servlet.music.FindMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FindMusicServlet</servlet-name>
@@ -46,7 +46,7 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>servlet.LoginServlet</servlet-class>
+        <servlet-class>servlet.user.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -56,7 +56,7 @@
 
     <servlet>
         <servlet-name>LoveMusicServlet</servlet-name>
-        <servlet-class>servlet.LoveMusicServlet</servlet-class>
+        <servlet-class>servlet.music.LoveMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoveMusicServlet</servlet-name>
@@ -67,7 +67,7 @@
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>servlet.RegisterServlet</servlet-class>
+        <servlet-class>servlet.user.RegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
@@ -77,7 +77,7 @@
 
     <servlet>
         <servlet-name>RemoveLoveMusicServlet</servlet-name>
-        <servlet-class>servlet.RemoveLoveMusicServlet</servlet-class>
+        <servlet-class>servlet.music.RemoveLoveMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RemoveLoveMusicServlet</servlet-name>
@@ -86,7 +86,7 @@
 
     <servlet>
         <servlet-name>UploadInsertMusicServlet</servlet-name>
-        <servlet-class>servlet.UploadInsertMusicServlet</servlet-class>
+        <servlet-class>servlet.music.UploadInsertMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UploadInsertMusicServlet</servlet-name>
@@ -95,11 +95,58 @@
 
     <servlet>
         <servlet-name>UploadMusicServlet</servlet-name>
-        <servlet-class>servlet.UploadMusicServlet</servlet-class>
+        <servlet-class>servlet.music.UploadMusicServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UploadMusicServlet</servlet-name>
         <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>DeleteVideoServlet</servlet-name>
+        <servlet-class>servlet.video.DeleteVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteVideoServlet</servlet-name>
+        <url-pattern>/deleteVideo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FindVideoServlet</servlet-name>
+        <servlet-class>servlet.video.FindVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FindVideoServlet</servlet-name>
+        <url-pattern>/findVideo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FindLoveVideoServlet</servlet-name>
+        <servlet-class>servlet.video.FindLoveVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FindLoveVideoServlet</servlet-name>
+        <url-pattern>/findLoveVideo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoveVideoServlet</servlet-name>
+        <servlet-class>servlet.video.LoveVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoveVideoServlet</servlet-name>
+        <url-pattern>/loveVideo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemoveLoveVideoServlet</servlet-name>
+        <servlet-class>servlet.video.RemoveLoveVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RemoveLoveVideoServlet</servlet-name>
+        <url-pattern>/removeLoveVideo</url-pattern>
     </servlet-mapping>
 
 </web-app>
