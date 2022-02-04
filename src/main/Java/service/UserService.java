@@ -6,13 +6,12 @@ import entity.User;
 
 public class UserService {
 
-
+    
     public static boolean register(User user){
         String name= user.getUserName();
         User findUser=UserDao.findUserByName(name);
         if(findUser==null){
-            boolean sucess=UserDao.addUser(user);
-            return sucess;
+            return UserDao.addUser(user);
         }else{
             return false;
         }
