@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,16 +19,16 @@ public class DeleteVideoServlet extends HttpServlet {
         System.out.println("删除指定视频");
         req.setCharacterEncoding("utf-8");
         resp.setContentType("application/json;charset=utf-8");
-        Map<String,Object> map=new HashMap<>();
         String strId=req.getParameter("id");
         int id=Integer.parseInt(strId);
         System.out.println("id->"+id);
+        Map<String,Object> map=new HashMap<>();
         Video video= VideoDao.findVideoById(id);
         if(video==null){
             return;
         }else{
             VideoDao.deleteVideo(id);
-            String path="D:\\Github\\OnlineMusic\\target\\OnlineMusic\\"+video.getUrl()+".mp4";
+            String path="D:\\Github\\OnlineMusic\\target\\OnlineMusic\\video\\"+video.getUrl()+".mp4";
             File file=new File(path);
             if(file.delete()){
                 System.out.println("删除成功");
@@ -40,6 +39,6 @@ public class DeleteVideoServlet extends HttpServlet {
             }
         }
         ObjectMapper mapper=new ObjectMapper();
-        mapper.writeValue(resp.getWriter(),mapper);
+        mapper.writeValue(resp.getWriter(),map);
     }
 }
