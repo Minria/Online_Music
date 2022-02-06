@@ -20,7 +20,7 @@ public class UploadInsertMusicServlet extends HttpServlet {
         String[] titles = strings.split("\\.");
         String title = titles[0];
         System.out.println("title:" + title);
-        String url = "music\\"+title;
+        String url = "music/"+title;
         System.out.println("url："+url);
         String singer = req.getParameter("singer");
         User user = (User) req.getSession().getAttribute("user");
