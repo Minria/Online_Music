@@ -18,7 +18,7 @@ import java.util.List;
 
 @MultipartConfig
 public class UploadMusicServlet extends HttpServlet {
-    private static final String URL="D:\\Github\\OnlineMusic\\target\\OnlineMusic\\music\\";
+    private static final String URL="/root/apache-tomcat-8.5.75/webapps/OnlineMusic/music/";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         req.setCharacterEncoding("utf-8");
