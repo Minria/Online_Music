@@ -13,7 +13,7 @@ public class MusicService {
         }else{
             boolean successful=MusicDao.deleteMusic(id);
             if(successful){
-                String path="D:\\Github\\OnlineMusic\\target\\OnlineMusic\\"+music.getUrl()+".mp3";
+                String path="/root/apache-tomcat-8.5.75/webapps/OnlineMusic/"+music.getUrl()+".mp3";
                 System.out.println("音乐路径->"+path);
                 File file = new File(path);
                 System.out.println("文件是否存在->"+file.exists());
