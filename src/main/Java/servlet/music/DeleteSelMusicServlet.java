@@ -3,8 +3,10 @@ package servlet.music;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.MusicDao;
 import entity.Music;
+import entity.User;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,26 +16,32 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
 public class DeleteSelMusicServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json;charset=utf-8");
+        User user= (User) req.getSession().getAttribute("user");
         String[] values = req.getParameterValues("id[]");
         System.out.println("deleteSelectedServlet："+ Arrays.toString(values));
         //删除
         int sum=0;
         Map<String,Object> map=new HashMap<>();
-        for(int i=0;i<values.length;i++){
-            int j = Integer.parseInt(values[i]);
-            System.out.println("j :"+j);
+        for (String value : values) {
+            int j = Integer.parseInt(value);
+            System.out.println("j :" + j);
             //调用Service层方法删除
             Music music = MusicDao.findMusicById(j);
+            if (music.getUserId() != user.getId()) {
+                continue;
+            }
             boolean successful = MusicDao.deleteMusic(j);
             //sum=sum+delete;
-            if(successful) {
+            if (successful) {
                 //3、数据库删除完成后，检查还是否存在。如果不存在，那么删除掉磁盘上的文件
-                File file = new File("/root/apache-tomcat-8.5.75/webapps/OnlineMusic/"+music.getUrl() + ".mp3");
+                File file = new File("/root/apache-tomcat-8.5.75/webapps/OnlineMusic/" + music.getUrl() + ".mp3");
                 System.out.println("文件是否存在：" + file.exists());
                 System.out.println("file: " + file);
                 if (file.delete()) {

@@ -6,11 +6,14 @@ import entity.Music;
 import java.io.File;
 
 public class MusicService {
-    public static boolean deleteMusic(int id){
+    public static boolean deleteMusic(int id,int userId){
         Music music= MusicDao.findMusicById(id);
         if(music==null){
             return false;
         }else{
+            if(music.getUserId()!=userId) {
+                return false;
+            }
             boolean successful=MusicDao.deleteMusic(id);
             if(successful){
                 String path="/root/apache-tomcat-8.5.75/webapps/OnlineMusic/"+music.getUrl()+".mp3";

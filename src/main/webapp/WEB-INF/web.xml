@@ -5,6 +5,7 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1"
          metadata-complete="true">
+
     <servlet>
         <servlet-name>DeleteMusicServlet</servlet-name>
         <servlet-class>servlet.music.DeleteMusicServlet</servlet-class>
@@ -100,53 +101,6 @@
     <servlet-mapping>
         <servlet-name>UploadMusicServlet</servlet-name>
         <url-pattern>/upload</url-pattern>
-    </servlet-mapping>
-
-
-
-    <servlet>
-        <servlet-name>DeleteVideoServlet</servlet-name>
-        <servlet-class>servlet.video.DeleteVideoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DeleteVideoServlet</servlet-name>
-        <url-pattern>/deleteVideo</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>FindVideoServlet</servlet-name>
-        <servlet-class>servlet.video.FindVideoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FindVideoServlet</servlet-name>
-        <url-pattern>/findVideo</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>FindLoveVideoServlet</servlet-name>
-        <servlet-class>servlet.video.FindLoveVideoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FindLoveVideoServlet</servlet-name>
-        <url-pattern>/findLoveVideo</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>LoveVideoServlet</servlet-name>
-        <servlet-class>servlet.video.LoveVideoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoveVideoServlet</servlet-name>
-        <url-pattern>/loveVideo</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>RemoveLoveVideoServlet</servlet-name>
-        <servlet-class>servlet.video.RemoveLoveVideoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RemoveLoveVideoServlet</servlet-name>
-        <url-pattern>/removeLoveVideo</url-pattern>
     </servlet-mapping>
 
 </web-app>
